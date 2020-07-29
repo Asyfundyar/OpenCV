@@ -1,2 +1,2 @@
 # OpenCV
-Implementing basic features of OpenCV library.
+Implementing basic features of OpenCV library in python.
