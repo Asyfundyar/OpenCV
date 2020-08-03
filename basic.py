@@ -5,15 +5,18 @@ import numpy as np
 ****For reading and displaying an image****
 """
 
+# For importing an image, it's located in the resources folder of your project
 img = cv2.imread("resources/example.jpg")
 kernel = np.ones((5, 5), np.uint8)
 
+# You can edit the image by applying any of these effects to it
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 blur = cv2.GaussianBlur(img, (7, 7), 0)
 canny = cv2.Canny(img, 150, 200)
 dilation = cv2.dilate(canny, kernel, iterations=1)
 erosion = cv2.erode(canny, dilation, iterations=1)
 
+# imshow will display whatever is in the argument
 cv2.imshow("Output", img)
 cv2.imshow("Gray image", gray)
 cv2.imshow("Blur image", blur)
@@ -41,8 +44,10 @@ while True:
 """
 
 cam = cv2.VideoCapture(0)
+# For adjusting resolution, 3 = width, 4 = height
 cam.set(3, 640)
 cam.set(4, 480)
+# For adjusting brightness, 10 = brightness level
 cam.set(10, 100)
 
 while True:
